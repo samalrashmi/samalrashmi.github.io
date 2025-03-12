@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner.day {
+    background-image: url('sun_with_sunglasses.png');
+}
+
+.banner.night {
+    background-image: url('moon_with_stars.png');
+}
+
+#banner {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+#content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.content {
+    padding: 20px;
+}
+
+#localTime {
+    text-align: right;
+    font-size: 14px;
+    color: gray;
+}
+
+.sun {
+    background: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.sun::before, .sun::after {
+    content: '';
+    position: absolute;
+    background: yellow;
+    border-radius: 50%;
+}
+
+.sun::before {
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: 40px;
+}
+
+.sun::after {
+    width: 20px;
+    height: 20px;
+    bottom: -10px;
+    left: 40px;
+}
+
+.sunglasses {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    background: black;
+    border-radius: 15px;
+    top: 35px;
+    left: 20px;
+}
+
+.moon {
+    background: #2c3e50;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.moon::before {
+    content: '';
+    background: #ecf0f1;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background-image: radial-gradient(white, transparent 20%);
+    background-size: 20px 20px;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
