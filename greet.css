@@ -1,24 +1,25 @@
 body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
 }
 
 .banner {
-    height: 100px;
+    width: 20%;
+    height: 100vh;
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner.day {
-    background-image: url('sun_with_sunglasses.png');
+    background-color: orange;
 }
 
 .banner.night {
-    background-image: url('moon_with_stars.png');
+    background-color: purple;
 }
 
 #banner {
@@ -34,7 +35,7 @@ body {
 }
 
 #content {
-    margin-left: 220px;
+    width: 80%;
     padding: 20px;
 }
 
@@ -43,16 +44,16 @@ body {
 }
 
 #localTime {
-    text-align: right;
     font-size: 14px;
     color: gray;
+    text-align: right;
 }
 
 .sun {
     background: yellow;
-    border-radius: 50%;
+    border-radius: 50% 50% 0 0;
     width: 100px;
-    height: 100px;
+    height: 50px;
     position: relative;
 }
 
@@ -80,11 +81,28 @@ body {
 .sunglasses {
     position: absolute;
     width: 60px;
-    height: 30px;
+    height: 20px;
     background: black;
-    border-radius: 15px;
-    top: 35px;
+    border-radius: 10px;
+    top: 15px;
     left: 20px;
+}
+
+.sunglasses::before, .sunglasses::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+}
+
+.sunglasses::before {
+    left: -10px;
+}
+
+.sunglasses::after {
+    right: -10px;
 }
 
 .moon {

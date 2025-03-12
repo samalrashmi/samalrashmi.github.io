@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="banner">
+        <div class="sun">
+            <div class="sunglasses"></div>
+        </div>
+    </div>
+    <div class="container" id="content">
         <div class="row">
-            <div class="col-md-3 banner"></div>
-            <div class="col-md-9 content">
-                <h1>Welcome!</h1>
-                <form id="welcomeForm" class="form-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" class="form-control" required>
-                    <br>
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" class="form-control" required>
-                    <br>
+            <div class="col-md-12 content">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1>Welcome!</h1>
+                    <p id="localTime" class="text-right"></p>
+                </div>
+                <form id="welcomeForm" class="form-inline">
+                    <label for="firstName" class="mr-2">First Name:</label>
+                    <input type="text" id="firstName" class="form-control mr-2" maxlength="30" required>
+                    <label for="lastName" class="mr-2">Last Name:</label>
+                    <input type="text" id="lastName" class="form-control mr-2" maxlength="30" required>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <p id="welcomeMessage"></p>
-                <p id="localTime"></p>
             </div>
         </div>
     </div>
