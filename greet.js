@@ -4,14 +4,15 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
     const lastName = document.getElementById('lastName').value;
     const welcomeMessage = `Hi, ${firstName} ${lastName}, Welcome to this page. Hope you are doing good.`;
     document.getElementById('welcomeMessage').textContent = welcomeMessage;
+    document.getElementById('userName').textContent = `${firstName} ${lastName}`;
 });
 
 function updateBannerAndTime() {
     const now = new Date();
     const hours = now.getHours();
     const banner = document.querySelector('.banner');
-    const localTime = document.getElementById('localTime');
-    localTime.textContent = now.toLocaleString();
+    const dateTime = document.getElementById('dateTime');
+    dateTime.textContent = now.toLocaleString();
 
     if (hours < 16) {
         banner.classList.add('day');

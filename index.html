@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
-    <link rel="stylesheet" href="/greet.css">
+    <link rel="stylesheet" href="./greet.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="banner">
-        <div class="sun">
-            <div class="sunglasses"></div>
-        </div>
+        <div id="userName" class="user-name"></div>
+        <div id="dateTime" class="date-time"></div>
     </div>
     <div class="container" id="content">
         <div class="row">
@@ -27,10 +26,10 @@
                     <input type="text" id="lastName" class="form-control mr-2" maxlength="30" required>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <p id="welcomeMessage"></p>
+                <p id="welcomeMessage" class="welcome-message"></p>
             </div>
         </div>
     </div>
-    <script src="/greet.js"></script>
+    <script src="./greet.js"></script>
 </body>
 </html>
