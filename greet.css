@@ -33,6 +33,7 @@ body.dark-mode .header, body.dark-mode .footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative; /* For home button positioning */
 }
 
 .logo-placeholder {
@@ -77,9 +78,15 @@ body.dark-mode .card {
     transform: translateY(-5px);
     box-shadow: 12px 12px 24px #c1c1c1, -12px -12px 24px #ffffff;
 }
+.card-link{
+    cursor: pointer;
+}
 
 body.dark-mode .card-hover:hover {
     box-shadow: 12px 12px 24px #101010, -12px -12px 24px #4a4a4a;
+}
+.form-card{
+    max-width: 500px;
 }
 
 .card-header {
@@ -131,7 +138,7 @@ body.dark-mode .card-header {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: #f8f8f8; /* Neumorphic background */
+    background-color: #f8f8f8;
     box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -144,4 +151,22 @@ body.dark-mode .form-control {
 
 .mt-3 {
     margin-top: 15px;
+}
+
+.home-button {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
 }
