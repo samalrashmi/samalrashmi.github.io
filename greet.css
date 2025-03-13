@@ -1,3 +1,4 @@
+/* Base styles for body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,28 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Theme variables for light and dark modes */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --card-background: #f8f9fa;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --header-footer-background: #007bff;
+    --header-footer-text: #ffffff;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --card-background: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --header-footer-background: #1f1f1f;
+    --header-footer-text: #e0e0e0;
 }
 
 .banner {
@@ -58,39 +81,48 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Header styling */
 header.header {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--header-footer-background);
+    color: var(--header-footer-text);
     padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 4px var(--card-shadow);
 }
 
+/* Footer styling */
 footer.footer {
-    background-color: #f8f9fa;
+    background-color: var(--header-footer-background);
+    color: var(--header-footer-text);
     text-align: center;
     padding: 10px;
     margin-top: auto;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--card-shadow);
 }
 
+/* Card styling */
 .card {
-    border: 1px solid #ddd;
+    background-color: var(--card-background);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px var(--card-shadow);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    margin-bottom: 20px;
+    padding: 15px;
 }
 
 .card-hover:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--card-shadow);
 }
 
+/* Card header styling */
 .card-header {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--header-footer-background);
+    color: var(--header-footer-text);
     padding: 10px;
     font-size: 18px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--card-shadow);
+    text-align: center;
 }
 
 .card-body {
@@ -99,4 +131,11 @@ footer.footer {
 
 .container {
     flex: 1;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
 }
